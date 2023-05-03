@@ -16,7 +16,7 @@ const TypingEffect: FC<{ text: string }> = ({ text }) => {
 		}, 100);
 
 		return () => clearTimeout(timeout);
-	}, [index]);
+	}, [index, text.length]);
 
 	return (
 		<p className="text-sky-700 text-2xl font-bold my-4 relative drop-shadow-md transition">

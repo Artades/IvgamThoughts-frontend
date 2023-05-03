@@ -6,8 +6,8 @@ const themeColor = {
 	fact: "yellow",
 	news: "white",
 	hilarious: "red",
-	greeting: "blue",
-	space: "indigo"
+	greeting: "#57CEEB",
+	space: "gray",
 } as const;
 
 export type Color = (typeof themeColor)[keyof typeof themeColor];

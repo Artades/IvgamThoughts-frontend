@@ -15,5 +15,5 @@ html{
 }
 
 .container{
-  @apply max-w-[800px] min-h-[100vh] mx-auto px-2
+  @apply max-w-[800px] min-h-[100vh] mx-auto px-3
 }

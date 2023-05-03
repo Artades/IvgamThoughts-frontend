@@ -27,12 +27,12 @@ export default function Home() {
 					<nav>
 						<ul className="flex items-center justify-center ">
 							<Button
-								mx={2}
+								mx={3}
 								label={"Login"}
 								onClick={() => router.push("/login")}
 							/>
 							<Button
-								mx={2}
+								mx={3}
 								label={"Sign Up"}
 								secondary
 								onClick={() => router.push("/register")}

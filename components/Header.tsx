@@ -22,7 +22,7 @@ const Header = () => {
                                         ?
 									</span>
 									<div className="w-full flex items-center justify-center ">
-										<Button mx={2} label="Yes" onClick={onClickLogout} />
+										<Button mx={3} label="Yes" onClick={onClickLogout} />
 										<Button mx={1} label="No" onClick={() => toast.dismiss(t.id)} />
 									</div>
 								</div>

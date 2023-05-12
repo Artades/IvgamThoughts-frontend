@@ -7,6 +7,9 @@ import Input from "@/components/ui/Input";
 import { useRouter } from "next/router";
 import MetaHead from "@/meta/MetaHead";
 import Button from "@/components/ui/Button";
+import imageLoader from "@/imageLoader";
+import Image from "next/image";
+import logo from "../public/images/logo1.png";
 
 export default function Login() {
 	const [email, setEmail] = useState("");
@@ -15,7 +18,7 @@ export default function Login() {
 		try {
 			const { token } = await Api.auth.login(values);
 
-			toast.success('You successfully Logged In')
+			toast.success(`Hello! I'm glad you're here again🐱`);
 			setCookie(null, "_token", token, {
 				path: "/",
 			});
@@ -32,10 +35,20 @@ export default function Login() {
 	return (
 		<>
 			<MetaHead title="Login" />
-			<div className="relative h-full w-full bg-[url('../public/images/hero1.png')] bg-no-repeat bg-center bg-fixed bg-cover">
+			<div className="relative h-full w-full bg-[url('../public/images/ocean.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
 				<div className="bg-black w-full h-full lg:bg-opacity-50">
-					<nav className="px-12 py-9 ">
-						<img src="../images/logo1.png" alt="Logo" className="h-12 " />
+					<nav className="px-12 py-9 h-12">
+						
+						<Image
+							src={logo}
+							unoptimized
+							loading="lazy"
+							loader={imageLoader}
+							quality={100}
+							placeholder={"blur"}
+							className="h-12 w-12"
+							alt="Logo"
+						/>
 					</nav>
 					<div className="flex justify-center">
 						<div className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
@@ -64,7 +77,12 @@ export default function Login() {
 								/>
 							</div>
 
-							<Button my={4} label={"Log In"} onClick={() => onSubmit(values)} fullWidth />
+							<Button
+								my={4}
+								label={"Log In"}
+								onClick={() => onSubmit(values)}
+								fullWidth
+							/>
 
 							<p className="text-neutral-500 mt-12">
 								First time using Ivgam Thoughts ?

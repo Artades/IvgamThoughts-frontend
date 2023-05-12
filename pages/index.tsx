@@ -1,9 +1,11 @@
-import Head from 'next/head'
+import Image from 'next/image';
 
 
 import Button from '@/components/ui/Button'
 import { useRouter } from 'next/router';
 import MetaHead from '@/meta/MetaHead';
+import imageLoader from '@/imageLoader';
+import logoHome from "../public/images/logo1.png"
 
 
 
@@ -15,7 +17,7 @@ export default function Home() {
 			<div className="container h-full flex items-center justify-center">
 				<div className="flex items-center flex-col">
 					<div className="p-10 border-2 border-dotted border-blue-400 shadow-md rounded-full  flex items-center justify-center mb-5 animate-pulselogo">
-						<img src="../images/logo1.png" className="h-20 " alt="Logo" />
+						<Image src={logoHome} unoptimized loading='lazy' loader={imageLoader} quality={100} placeholder={"blur"} className="h-20 w-20 " alt="Logo" />
 					</div>
 					<h2 className="text-4xl text-white font-bold ">Ivgam Thoughts</h2>
 					<p className="my-7 text-lg text-white opacity-60 text-center ">

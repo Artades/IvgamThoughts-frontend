@@ -1,9 +1,7 @@
-import React from "react";
-
 export interface PostItemProps {
     id: number;
 	title: string;
-	body: React.ReactNode;
+	body: string;
     theme: string;
     createdAt: string;
 }

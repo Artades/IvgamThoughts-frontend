@@ -8,6 +8,7 @@ import MetaHead from "@/meta/MetaHead";
 import { Color, getColorByTheme } from "@/utils/getColorByTheme";
 import { format } from "date-fns";
 import Link from "next/link";
+import ReactMarkdown from "react-markdown";
 
 
 const ThoughtPage = () => {
@@ -61,7 +62,7 @@ const ThoughtPage = () => {
 							onClick={() => router.push("/home/thoughts/")}
 							label="Back"
 						/>
-						<Link href={'https://ivgam-links.vercel.app'} target="_blank">
+						<Link href={"https://ivgam-links.vercel.app"} target="_blank">
 							<div className="flex flex-col items-center">
 								<img
 									className="w-12 h-12 rounded-full shadow-lg mb-2"
@@ -85,9 +86,10 @@ const ThoughtPage = () => {
 					<h2 className="text-4xl lg:text-6xl text-white  font-bold mb-10">
 						{postData?.title}
 					</h2>
-					<p className="text-lg lg:text-xl text-neutral-300 leading-8">
+
+					<ReactMarkdown className="text-lg lg:text-xl text-neutral-300 leading-8">
 						{postData?.body}
-					</p>
+					</ReactMarkdown>
 				</div>
 			</div>
 		</>

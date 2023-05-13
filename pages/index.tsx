@@ -27,14 +27,14 @@ export default function Home() {
 						intellectual exploration for thought-provoking insights.
 					</p>
 					<nav>
-						<ul className="flex items-center justify-center ">
+						<ul className="flex items-center justify-center gap-2">
 							<Button
-								mx={3}
+								
 								label={"Login"}
 								onClick={() => router.push("/login")}
 							/>
 							<Button
-								mx={2}
+								
 								label={"Sign Up"}
 								secondary
 								onClick={() => router.push("/register")}

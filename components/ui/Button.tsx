@@ -6,8 +6,7 @@ interface ButtonProps {
 	onClick: () => void;
 	disabled?: boolean;
 	outline?: boolean;
-	mx?: number;
-	my?: number;
+	
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -18,8 +17,7 @@ const Button: React.FC<ButtonProps> = ({
 	large,
 	disabled,
 	outline,
-	mx,
-	my
+	
 }) => {
 	return (
 		<button
@@ -34,8 +32,7 @@ const Button: React.FC<ButtonProps> = ({
         hover:opacity-80
         transition
         border-2
-		mx-${mx}
-		my-${my}
+		my-5
         ${fullWidth ? "w-full" : "w-fit"}
         ${secondary ? "bg-white" : "bg-blue-500"}
         ${secondary ? "text-black" : "text-white"}

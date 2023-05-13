@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import MetaHead from "@/meta/MetaHead";
 import Posts from "@/components/posts/Posts";
 import { PostItemProps } from "../../../api/dto/post.dto";
+import Footer from "@/components/Footer";
 
 interface Props {
 	items: PostItemProps[];
@@ -23,6 +24,7 @@ const Thoughts: NextPage<Props> = ({ items }) => {
 				<Header />
 				<GetHello />
 				<Posts   items={items} />
+				<Footer />
 			</div>
 		</>
 	);

@@ -16,14 +16,18 @@ const Header = () => {
             const logOutToast = () => {
 							toast((t) => (
 								<div className="flex flex-col items-start">
-									<span className="text-neutral-600 text-md mb-5">
+									<span className="text-neutral-600 text-md ">
 										Are you sure you want to{" "}
 										<b className="text-blue-500">Log out</b>
                                         ?
 									</span>
 									<div className="w-full flex items-center justify-center ">
-										<Button mx={3} label="Yes" onClick={onClickLogout} />
-										<Button mx={1} label="No" onClick={() => toast.dismiss(t.id)} />
+										<Button  label="Yes" onClick={onClickLogout} />
+
+										<p className="text-md mx-2"> or </p>
+
+										<Button  label="No" onClick={() => toast.dismiss(t.id)} />
+
 									</div>
 								</div>
 							));

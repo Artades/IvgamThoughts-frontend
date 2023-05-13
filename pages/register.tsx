@@ -90,7 +90,7 @@ export default function Register() {
 								/>
 							</div>
 							<Button
-								my={4}
+								
 								label={"Sign Up"}
 								onClick={() => onSubmit(values)}
 								fullWidth

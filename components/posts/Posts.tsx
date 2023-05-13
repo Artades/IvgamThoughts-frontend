@@ -25,7 +25,9 @@ const Posts: FC<PostsProps> = ({ items}) => {
 						: "opacity-10 translate-y-[150px]"
 				} transition duration-300`}
 			>
-				{items.map((post: PostItemProps) => {
+				{
+				
+				items.map((post: PostItemProps) => {
 					return (
 						<PostItem
 							key={post.id}

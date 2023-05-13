@@ -7,6 +7,7 @@ import Button from "@/components/ui/Button";
 import MetaHead from "@/meta/MetaHead";
 import { Color, getColorByTheme } from "@/utils/getColorByTheme";
 import { format } from "date-fns";
+import Link from "next/link";
 
 
 const ThoughtPage = () => {
@@ -43,7 +44,7 @@ const ThoughtPage = () => {
 	if (!thoughtId || !postData) {
 		return (
 			<div className="flex h-[100vh] w-full items-center justify-center">
-				<PuffLoader color="lightblue" size={100}/>
+				<PuffLoader color={"skyblue"} size={100}/>
 			</div>
 		);
 	}
@@ -55,15 +56,21 @@ const ThoughtPage = () => {
 			<div className="container">
 				<div className="py-10 flex flex-col items-start">
 					<div className="flex items-center w-full justify-between ">
-						<Button secondary onClick={() => router.back()} label="Back" />
-						<div className="flex flex-col items-center">
-							<img
-								className="w-12 h-12 rounded-full shadow-lg mb-2"
-								src="../../images/me.png"
-								alt=""
-							/>
-							<p className="text-white text-md font-bold">Artyom Galay</p>
-						</div>
+						<Button
+							secondary
+							onClick={() => router.push("/home/thoughts/")}
+							label="Back"
+						/>
+						<Link href={'https://ivgam-links.vercel.app'} target="_blank">
+							<div className="flex flex-col items-center">
+								<img
+									className="w-12 h-12 rounded-full shadow-lg mb-2"
+									src="../../images/me.png"
+									alt=""
+								/>
+								<p className="text-white text-md font-bold">Artyom Galay</p>
+							</div>
+						</Link>
 					</div>
 
 					<p className="text-lg text-neutral-500 my-10">{createdAt}</p>

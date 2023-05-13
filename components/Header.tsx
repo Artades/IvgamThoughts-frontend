@@ -46,6 +46,7 @@ const Header = () => {
 			onClick={logOutToast}
 				className="hover:opacity-70 cursor-pointer"
 				size={30}
+				title="Log out"
 				color={"#60AEEB"}
 			/>
 		</header>

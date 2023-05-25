@@ -43,7 +43,7 @@ const Header = () => {
 				</li>
 				|
 				<li className="text-neutral-600 text-lg mx-3 cursor-pointer hover:opacity-70"onClick={() => router.push('/home/notes')}>
-					Pics
+					Images
 				</li>
 			</ul>
 			<CiLogout

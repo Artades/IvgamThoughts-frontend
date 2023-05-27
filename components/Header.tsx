@@ -34,20 +34,32 @@ const Header = () => {
 						};
 
 						const router = useRouter();
+						const {pathname} = router;
+						console.log(pathname)
 	return (
 		<header className="w-full py-7 flex items-center justify-between mb-16">
 			<img src="../images/logo1.png" alt="Logo" className="h-9" />
 			<ul className="flex items-center text-xl text-neutral-700 ">
-				<li className="text-blue-500 text-lg mx-3 cursor-pointer hover:opacity-70" onClick={() => router.push('/home/thoughts')}>
+				<li
+					className={`${
+						pathname === "/home/thoughts" ? "text-blue-500" : "text-neutral-600"
+					}  text-lg mx-3 cursor-pointer hover:opacity-70`}
+					onClick={() => router.push("/home/thoughts")}
+				>
 					Thoughts
 				</li>
 				|
-				<li className="text-neutral-600 text-lg mx-3 cursor-pointer hover:opacity-70"onClick={() => router.push('/home/notes')}>
+				<li
+					className={`${
+						pathname === "/home/images" ? "text-blue-500" : "text-neutral-600"
+					}  text-lg mx-3 cursor-pointer hover:opacity-70`}
+					onClick={() => router.push("/home/images")}
+				>
 					Images
 				</li>
 			</ul>
 			<CiLogout
-			onClick={logOutToast}
+				onClick={logOutToast}
 				className="hover:opacity-70 cursor-pointer"
 				size={30}
 				title="Log out"

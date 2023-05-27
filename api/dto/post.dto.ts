@@ -1,7 +1,7 @@
 export interface PostItemProps {
-    id: number;
+	id: number;
 	title: string;
 	body: string;
-    theme: string;
-    createdAt: string;
+	theme: string;
+	createdAt: string;
 }

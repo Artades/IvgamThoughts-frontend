@@ -3,6 +3,7 @@ import React, { FC, useEffect, useState } from "react";
 import ImageItem from "./ImageItem";
 import {BsGridFill} from "react-icons/bs";
 import {FaSquare} from 'react-icons/fa';
+import { PuffLoader } from "react-spinners";
 
 interface ImagesProps {
 	items: ImageItemProps[];
@@ -16,6 +17,13 @@ const ImageGrid: FC<ImagesProps> = ({ items }) => {
 		const timer = setTimeout(() => setShowImages(true), 0);
 		return () => clearTimeout(timer);
 	}, []);
+	if (!items) {
+		return (
+			<div className="flex h-[100vh] w-full items-center justify-center">
+				<PuffLoader color={"skyblue"} size={100} />
+			</div>
+		);
+	}
 	return (
 		<>
 			<div className="flex items-center justify-between ">

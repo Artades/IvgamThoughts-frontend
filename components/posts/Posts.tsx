@@ -1,5 +1,6 @@
 import { PostItemProps } from "@/api/dto/post.dto";
 import React, { useState, FC, useEffect } from "react";
+import { PuffLoader } from "react-spinners";
 import PostItem from "./PostItem";
 
 interface PostsProps {
@@ -14,7 +15,13 @@ const Posts: FC<PostsProps> = ({ items}) => {
     const timer = setTimeout(() => setShowPosts(true), 0);
     return () => clearTimeout(timer);
   }, []);
-
+	if (!items) {
+		return (
+			<div className="flex h-[100vh] w-full items-center justify-center">
+				<PuffLoader color={"skyblue"} size={100} />
+			</div>
+		);
+	}
   return (
 		<>
 			<p className="text-lg my-7 text-neutral-500 ">Today&apos;s thoughts:</p>

@@ -50,8 +50,8 @@ const ImageGrid: FC<ImagesProps> = ({ items }) => {
 			<div
 				className={` ${
 					sorting === "grid"
-						? "grid grid-cols-2 lg:grid-cols-2 mb-10 gap-5"
-						: "flex flex-col gap-5"
+						? "grid grid-cols-2 lg:grid-cols-3  mb-10 gap-2"
+						: "flex flex-col gap-2"
 				}  ${
 					showImages
 						? "opacity-100 translate-y-[0px]"
@@ -67,7 +67,7 @@ const ImageGrid: FC<ImagesProps> = ({ items }) => {
 							isDownloaded={image.isDownloaded}
 							creator={image.creator}
 							createdAt={image.createdAt}
-							
+							id={image.id}
 						/>
 					);
 				})}

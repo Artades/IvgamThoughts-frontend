@@ -32,7 +32,7 @@ const PostItem: FC<PostItemProps> = ({ title, body, theme, id }) => {
 			onClick={() => router.push(`/home/thoughts/${id}`)}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
-			className={`px-5 py-7 lg:py-12 bg-zinc-800 rounded-lg flex flex-col items-start cursor-pointer transition duration-300`}
+			className={`px-5 py-7 lg:py-12 bg-zinc-800 rounded-md flex flex-col items-start cursor-pointer transition duration-200`}
 		>
 			<div
 				className={`h-4 w-4 rounded-full`}
@@ -49,7 +49,7 @@ const PostItem: FC<PostItemProps> = ({ title, body, theme, id }) => {
 				className="flex items-center mt-10 hover:opacity-50"
 			>
 				<p style={{ color }} className="mr-2 text-lg ">
-					Read More
+					Read
 				</p>
 				<IoEllipsisHorizontalCircleOutline size={20} color={color} />
 			</div>

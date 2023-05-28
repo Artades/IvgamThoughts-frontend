@@ -15,7 +15,7 @@ const Posts: FC<PostsProps> = ({ items}) => {
     const timer = setTimeout(() => setShowPosts(true), 0);
     return () => clearTimeout(timer);
   }, []);
-	if (!items) {
+	if (typeof items === null) {
 		return (
 			<div className="flex h-[100vh] w-full items-center justify-center">
 				<PuffLoader color={"skyblue"} size={100} />
@@ -26,7 +26,7 @@ const Posts: FC<PostsProps> = ({ items}) => {
 		<>
 			<p className="text-lg my-7 text-neutral-500 ">Today&apos;s thoughts:</p>
 			<div
-				className={`grid grid-cols-1 lg:grid-cols-2 mb-10 gap-5 ${
+				className={`grid grid-cols-1 lg:grid-cols-2 mb-10 gap-3 ${
 					showPosts
 						? "opacity-100 translate-y-[0px]"
 						: "opacity-10 translate-y-[150px]"

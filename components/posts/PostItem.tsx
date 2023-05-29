@@ -25,14 +25,14 @@ const PostItem: FC<PostItemProps> = ({ title, body, theme, id }) => {
 	return (
 		<div
 			style={{
-				transform: hovered ? "scale(1.02)" : "scale(1)",
-				boxShadow: hovered ? `0 0 7px ${color}` : "none",
+				transform: hovered ? "scale(0.95)" : "scale(1)",
+				boxShadow: hovered ? `0 0 6px ${color}` : "none",
 				opacity: hovered ? 0.8 : 1,
 			}}
 			onClick={() => router.push(`/home/thoughts/${id}`)}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
-			className={`px-5 py-7 lg:py-12 bg-zinc-800 rounded-md flex flex-col items-start cursor-pointer transition duration-200`}
+			className={`px-5 py-7 lg:py-12   border border-neutral-700 rounded-xl flex flex-col items-start cursor-pointer transition duration-300`}
 		>
 			<div
 				className={`h-4 w-4 rounded-full`}

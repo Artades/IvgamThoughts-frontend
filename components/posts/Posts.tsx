@@ -26,7 +26,7 @@ const Posts: FC<PostsProps> = ({ items}) => {
 		<>
 			<p className="text-lg my-7 text-neutral-500 ">Today&apos;s thoughts:</p>
 			<div
-				className={`grid grid-cols-1 lg:grid-cols-2 mb-10 gap-3 ${
+				className={`grid grid-cols-1 lg:grid-cols-2 mb-10 gap-2 ${
 					showPosts
 						? "opacity-100 translate-y-[0px]"
 						: "opacity-10 translate-y-[150px]"

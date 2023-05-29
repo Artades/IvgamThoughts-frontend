@@ -1,7 +1,7 @@
 import { ImageItemProps } from "@/api/dto/image.dto";
 import React, { FC, useEffect, useState } from "react";
 import ImageItem from "./ImageItem";
-import {BsGridFill} from "react-icons/bs";
+import { BsFillGrid1X2Fill } from "react-icons/bs";
 import {FaSquare} from 'react-icons/fa';
 import { PuffLoader } from "react-spinners";
 
@@ -29,7 +29,7 @@ const ImageGrid: FC<ImagesProps> = ({ items }) => {
 			<div className="flex items-center justify-between ">
 				<p className="text-lg my-7 text-neutral-500 ">Today&apos;s images:</p>
 				<div className="flex items-center">
-					<BsGridFill
+					<BsFillGrid1X2Fill
 						onClick={() => {
 							setSorting("grid");
 						}}
@@ -48,10 +48,10 @@ const ImageGrid: FC<ImagesProps> = ({ items }) => {
 				</div>
 			</div>
 			<div
-				className={` ${
+				className={`grid ${
 					sorting === "grid"
-						? "grid grid-cols-2 lg:grid-cols-3  mb-10 gap-2"
-						: "flex flex-col gap-2"
+						? " grid-cols-2 lg:grid-cols-3  mb-10 gap-2"
+						: "grid cols-1 gap-2"
 				}  ${
 					showImages
 						? "opacity-100 translate-y-[0px]"

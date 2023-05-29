@@ -23,9 +23,9 @@ const GetHello = () => {
 				!userData?.fullName ? "opacity-0 translate-y-[150px]" : "opacity-100 translate-y-0"
 			}`}
 		>
-			Hello
-			,{" "}
-			<span className="text-blue-500">{userData?.fullName} ⛅</span>
+			Hello, {"  "}
+
+			<span className="text-blue-500">    {userData?.fullName} 👋 </span>
 		</p>
 	);
 };

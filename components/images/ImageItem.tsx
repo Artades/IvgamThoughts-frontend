@@ -54,7 +54,7 @@ const ImageItem: FC<ImageItemProps> = ({
 	
 	
 	
-	const onLongPressRedirectToWatch = useCallback(
+	const onDoubleClickRedirectToWatch = useCallback(
 		(event: React.MouseEvent<HTMLDivElement>) => {
 			event.preventDefault();
 			onClickRedirectToWatch();
@@ -64,7 +64,7 @@ const ImageItem: FC<ImageItemProps> = ({
 
 	return (
 		<div
-			onContextMenu={onLongPressRedirectToWatch}
+			onDoubleClick={onDoubleClickRedirectToWatch}
 			
 			className={`${
 				id % 2 === 0 ? "row-span-2 " : "row-span-1  "

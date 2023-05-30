@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+
 body{
-  @apply bg-zinc-900 h-full overflow-x-hidden
+  @apply bg-zinc-900 h-full overflow-x-hidden 
+  
 }
 
 #__next {

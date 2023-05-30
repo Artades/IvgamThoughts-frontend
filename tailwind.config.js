@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config}*/
+
 module.exports = {
 	content: [
 		"./app/**/*.{js,ts,jsx,tsx}",
@@ -7,7 +8,9 @@ module.exports = {
 	],
 	theme: {
 		extend: {
-			
+			fontFamily: {
+				sans: ["Roboto", "sans-serif"],
+			},
 			animation: {
 				pulselogo: "pulselogo 1.5s ease infinite alternate",
 				pulsetitle: "pulsetitle 1.5s ease infinite alternate",
@@ -21,7 +24,6 @@ module.exports = {
 						boxShadow: "0 0 30px rgba(0,90, 234, 0.8)",
 					},
 				},
-				
 			},
 		},
 	},

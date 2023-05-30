@@ -20,15 +20,21 @@ export default function Register() {
 
 	const onSubmit = async (values: RegisterFormDTO) => {
 		try {
-			const { token } = await Api.auth.register(values);
+			if (values.password.trim().length >= 8) {
+				const { token } = await Api.auth.register(values);
 
-			toast.success("Congratulations! Now you are registered"); 
+				toast.success("Congratulations!");
 
-			setCookie(null, "_token", token, {
-				path: "/",
-			});
+				setCookie(null, "_token", token, {
+					path: "/",
+				});
 
-			location.href = "/home/thoughts";
+				location.href = "/home/thoughts";
+			}
+			else {
+				toast.error("Your password has to be longer then 8 symbols");
+				return;
+			}
 		} catch (err) {
 			console.warn(err);
 

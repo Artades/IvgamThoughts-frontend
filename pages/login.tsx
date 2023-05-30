@@ -16,9 +16,10 @@ export default function Login() {
 	const [password, setPassword] = useState("");
 	const onSubmit = async (values: LoginFormDTO) => {
 		try {
+			
 			const { token } = await Api.auth.login(values);
 
-			toast.success(`Hello! I'm glad you're here again🐱`);
+			toast.success(`I'm glad you're here again`);
 			setCookie(null, "_token", token, {
 				path: "/",
 			});

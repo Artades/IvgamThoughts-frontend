@@ -11,8 +11,8 @@ const PostItem: FC<PostItemProps> = ({ title, body, theme, id }) => {
 	const color = getColorByTheme(theme);
 
 	const router = useRouter();
-	const shortenedBody = shortenBody(body, 30);
-	const shortenedTitle = shortenBody(title, 14);
+	const shortenedBody = shortenBody(body, 60);
+	const shortenedTitle = shortenBody(title, 25);
 
 	const handleMouseEnter = () => {
 		setHovered(true);
@@ -25,30 +25,30 @@ const PostItem: FC<PostItemProps> = ({ title, body, theme, id }) => {
 	return (
 		<div
 			style={{
-				transform: hovered ? "scale(0.95)" : "scale(1)",
-				boxShadow: hovered ? `0 0 6px ${color}` : "none",
-				opacity: hovered ? 0.8 : 1,
+				transform: hovered ? "scale(0.97)" : "scale(1)",
+				boxShadow: hovered ? `0 0 7px ${color}` : "none",
+				// opacity: hovered ? 0.8 : 1,
 			}}
 			onClick={() => router.push(`/home/thoughts/${id}`)}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
-			className={`px-5 py-7 lg:py-12   border border-neutral-700 rounded-xl flex flex-col items-start cursor-pointer transition duration-300`}
+			className={`px-5 py-7 lg:py-10    border border-neutral-700 rounded-xl flex flex-col items-start cursor-pointer transition duration-250`}
 		>
 			<div
-				className={`h-4 w-4 rounded-full`}
+				className={`h-3 w-3 rounded-full`}
 				style={{ backgroundColor: color }}
 			></div>
 
-			<h2 className="text-xl text-white my-3 font-bold lg:text-2xl">
+			<h2 className="text-xl  text-white my-4 font-extrabold lg:text-2xl">
 				{shortenedTitle}
 			</h2>
-			<p className="text-md text-neutral-300 lg:text-lg">{shortenedBody}</p>
+			<p className="text-sm lg:text-md text-neutral-400 ">{shortenedBody}</p>
 
 			<div
-				style={{ opacity: hovered ? 0.5 : 1 }}
+				
 				className="flex items-center mt-10 hover:opacity-50"
 			>
-				<p style={{ color }} className="mr-2 text-lg ">
+				<p style={{ color }} className="mr-2 text-md lg:text-lg">
 					Read
 				</p>
 				<IoEllipsisHorizontalCircleOutline size={20} color={color} />

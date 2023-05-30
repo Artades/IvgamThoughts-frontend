@@ -19,7 +19,7 @@ const GetHello = () => {
   
 	return (
 		<p
-			className={`text-white text-2xl font-bold transition duration-500 ${
+			className={`text-white text-xl lg:text-2xl font-bold transition duration-500 ${
 				!userData?.fullName ? "opacity-0 translate-y-[150px]" : "opacity-100 translate-y-0"
 			}`}
 		>

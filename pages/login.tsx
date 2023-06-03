@@ -86,8 +86,8 @@ export default function Login() {
 							/>
 
 							<p className="text-neutral-500 mt-12">
-								First time using Ivgam Thoughts ?
-								<br />
+								Not a member?
+								
 								<span
 									onClick={() => {
 										router.push("/register");

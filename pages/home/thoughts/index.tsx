@@ -19,11 +19,11 @@ const Thoughts: NextPage<Props> = ({ items }) => {
 
 	return (
 		<>
-			<MetaHead title="Home / Thoughts" />
+			<MetaHead title="Thoughts" />
 			<div className="container py-5">
 				<Header />
 				<GetHello />
-				<Posts   items={items} />
+				<Posts items={items} />
 				<Footer />
 			</div>
 		</>

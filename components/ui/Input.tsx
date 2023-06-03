@@ -35,7 +35,7 @@ const Input: React.FC<InputProps> = ({ id, onChange, value, label, type }) => {
         w-full
         text-md
       text-white
-      bg-neutral-700
+      bg-transparent
       transition
       ring-2
         appearance-none

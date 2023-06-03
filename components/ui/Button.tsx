@@ -29,7 +29,7 @@ const Button: React.FC<ButtonProps> = ({
         disabled:cursor-not-allowed
         rounded-lg
         font-semibold
-        hover:bg-zinc-800
+        hover:bg-slate-700
 		hover:text-neutral-200
         transition
         border-2
@@ -37,7 +37,7 @@ const Button: React.FC<ButtonProps> = ({
         ${fullWidth ? "w-full" : "w-fit"}
         ${secondary ? "bg-white" : "bg-blue-500"}
         ${secondary ? "text-black" : "text-white"}
-        ${secondary ? "border-black" : "border-blue-400"}
+        ${secondary ? "border-white" : "border-blue-400"}
         ${large ? "text-xl" : "text-md"}
         ${large ? "px-5" : "px-4"}
         ${large ? "py-3" : "py-2"}

@@ -65,10 +65,9 @@ const ImageItem: FC<ImageItemProps> = ({
 	return (
 		<div
 			onDoubleClick={onDoubleClickRedirectToWatch}
-			
 			className={`${
 				id % 2 === 0 ? "row-span-2 " : "row-span-1  "
-			} group relative max-h-[680px] rounded-xl flex flex-col items-start justify-center cursor-pointer transition duration-400`}
+			} group  relative max-h-[680px] rounded-xl flex flex-col items-start justify-center cursor-pointer transition `}
 		>
 			<Image
 				quality={100}
@@ -80,7 +79,7 @@ const ImageItem: FC<ImageItemProps> = ({
 				unoptimized={true}
 				loader={imageLoader}
 				loading="lazy"
-				className={`w-full h-full rounded-xl object-cover `}
+				className={`w-full h-full rounded-xl object-cover bg-center group-hover:origin-top-left transition`}
 				alt="Image"
 			/>
 
@@ -103,7 +102,7 @@ const ImageItem: FC<ImageItemProps> = ({
 							onClick={onClickRedirectToWatch}
 						/>
 						<AiOutlineCloudDownload
-							className="hover:opacity-70 cursor-pointer ${}"
+							className="hover:opacity-70 cursor-pointer "
 							size={25}
 							color="#fff"
 							onClick={onClickDownload}

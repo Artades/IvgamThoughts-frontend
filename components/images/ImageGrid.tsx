@@ -2,16 +2,37 @@ import { ImageItemProps } from "@/api/dto/image.dto";
 import React, { FC, useEffect, useState } from "react";
 import ImageItem from "./ImageItem";
 import { BsFillGrid1X2Fill } from "react-icons/bs";
-import {FaSquare} from 'react-icons/fa';
+import { FaSquare } from "react-icons/fa";
 import { PuffLoader } from "react-spinners";
+import { AiOutlineInfoCircle } from "react-icons/ai";
+import toast from "react-hot-toast";
 
 interface ImagesProps {
 	items: ImageItemProps[];
 }
 
 const ImageGrid: FC<ImagesProps> = ({ items }) => {
+	const [menuShowed, setMenuShowed] = useState(false);
 	const [showImages, setShowImages] = useState(false);
 	const [sorting, setSorting] = useState("grid");
+	
+	const getMessage = (() => {
+		const examples = [
+			"Hello! Click this button to see a piece of advice.",
+			"Double-click on the selected image to open it.",
+			"Some images are not available for download, so please follow the previous advice.",
+			"Thank you!",
+		];
+
+		let currentIndex = 0;
+
+		return () => {
+			const message = examples[currentIndex];
+			currentIndex = (currentIndex + 1) % examples.length; 
+			return message;
+		};
+	})();
+
 
 	useEffect(() => {
 		const timer = setTimeout(() => setShowImages(true), 0);
@@ -24,10 +45,11 @@ const ImageGrid: FC<ImagesProps> = ({ items }) => {
 			</div>
 		);
 	}
+
 	return (
 		<>
 			<div className="flex items-center justify-between ">
-				<p className="text-lg my-7 text-neutral-500 ">Today&apos;s images:</p>
+				<p className="text-lg my-7 text-neutral-500 ">Popular images:</p>
 				<div className="flex items-center">
 					<BsFillGrid1X2Fill
 						onClick={() => {
@@ -41,9 +63,20 @@ const ImageGrid: FC<ImagesProps> = ({ items }) => {
 						onClick={() => {
 							setSorting("column");
 						}}
-						className="hover:opacity-70 cursor-pointer ml-1"
+						className="hover:opacity-70 cursor-pointer  mx-2"
 						size={25}
 						color={sorting === "column" ? "#60AEEB" : "#335"}
+					/>
+					<AiOutlineInfoCircle
+						onClick={() => {
+							const message = getMessage();
+							return toast(message, {
+								icon: "👏",
+							});
+						}}
+						className="hover:opacity-70 cursor-pointer"
+						size={25}
+						color={menuShowed ? "#80AEEB" : "#60Aeeb"}
 					/>
 				</div>
 			</div>

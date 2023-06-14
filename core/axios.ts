@@ -1,7 +1,7 @@
 import axios from "axios";
 import { parseCookies } from "nookies";
 
-axios.defaults.baseURL = "https://ivgam-thoughts.herokuapp.com/";
+axios.defaults.baseURL = "https://ivgamblog-backend.onrender.com/";
 
 axios.interceptors.request.use((config) => {
 	if (typeof window !== "undefined") {

@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import ImageGrid from "@/components/images/ImageGrid";
 import MetaHead from "@/meta/MetaHead";
-import { checkAuth } from "@/utils/checkAuth";
+
 import { GetServerSidePropsContext, NextPage } from "next";
 import * as Api from "@/api";
 import React from "react";
@@ -23,10 +23,7 @@ const Images: NextPage<Props> = ({ items }) => {
 	);
 };
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-	const authProps = await checkAuth(ctx);
-	if ("redirect" in authProps) {
-		return authProps;
-	}
+
 
 	try {
 		const items = await Api.images.getAll();

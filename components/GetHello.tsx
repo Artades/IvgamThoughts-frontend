@@ -1,31 +1,25 @@
-import { User } from "@/api/dto/auth.dto";
+
 import React, { FC, useState, useEffect } from "react";
-import * as Api from "@/api";
 
 
 const GetHello = () => {
-	const [userData, setUserData] = useState<User | null>(null);
-	
-
+	const [showGreeting, setShowGreeting] = useState(false);
 	useEffect(() => {
-		const getUserData = async () => {
-			const response = await Api.auth.getMe();
-			setUserData(response);
-		};
-		getUserData();
+		setTimeout(() => {
+			setShowGreeting(true);
+		}, 400);
 	}, []);
 
-
-  
 	return (
 		<p
 			className={`text-white text-xl lg:text-2xl font-bold transition duration-500 ${
-				!userData?.fullName ? "opacity-0 translate-y-[150px]" : "opacity-100 translate-y-0"
+				!showGreeting
+					? "opacity-0 translate-y-[150px]"
+					: "opacity-100 translate-y-0"
 			}`}
 		>
 			Hello, {"  "}
-
-			<span className="text-blue-500">    {userData?.fullName} 👋 </span>
+			<span className="text-blue-500"> Reader 👋 </span>
 		</p>
 	);
 };

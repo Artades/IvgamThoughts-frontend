@@ -1,5 +1,5 @@
 import GetHello from "@/components/GetHello";
-import { checkAuth } from "@/utils/checkAuth";
+
 import { GetServerSidePropsContext, NextPage } from "next";
 import * as Api from "@/api";
 import React from "react";
@@ -30,11 +30,6 @@ const Thoughts: NextPage<Props> = ({ items }) => {
 	);
 };
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
-	const authProps = await checkAuth(ctx);
-
-	if ("redirect" in authProps) {
-		return authProps;
-	}
 
 	try {
 		const items = await Api.posts.getAll();

@@ -26,25 +26,21 @@ export default function Home() {
 					</div>
 					<h2 className="text-4xl text-white font-bold ">Ivgam Blog</h2>
 					<p className="my-7 text-md lg:text-lg text-white opacity-60 text-center max-w-2xl">
-						Explore Ivgam Blog for captivating perspectives on life, love,
-						spirituality, and technology. Join us on a journey of self-discovery
-						and intellectual exploration. Uncover thought-provoking insights and
-						gain inspiration from our unique content. Expand your horizons with
-						Ivgam Blog.
+						Embark on an exciting journey of self-discovery and intellectual
+						exploration with Ivgam Blog. Discover captivating perspectives on
+						life and technology.
 					</p>
 					<nav>
-						<ul className="flex items-center justify-center gap-2">
-							<Button label={"Login"} onClick={() => router.push("/login")} />
+						<ul className="flex items-center justify-center ">
 							<Button
-								label={"Sign Up"}
-								secondary
-								onClick={() => router.push("/register")}
+								label={"Read Blog"}
+								onClick={() => router.push("/home/thoughts")}
 							/>
 						</ul>
 					</nav>
 				</div>
 				<div
-					className="absolute left-1/2 top-0 z-[-10] -translate-x-1/2 blur-3xl xl:-top-6"
+					className="absolute left-1/2 top-0 z-[-20] -translate-x-1/2 blur-3xl xl:-top-6"
 					aria-hidden="true"
 				>
 					<div

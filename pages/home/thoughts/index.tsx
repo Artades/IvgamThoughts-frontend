@@ -1,49 +1,49 @@
-import GetHello from "@/components/GetHello";
-
-import { GetServerSidePropsContext, NextPage } from "next";
+import { NextPage } from "next";
 import * as Api from "@/api";
 import React from "react";
+import { useQuery } from "react-query";
 import Header from "@/components/Header";
 import MetaHead from "@/meta/MetaHead";
 import Posts from "@/components/posts/Posts";
 import { PostItemProps } from "../../../api/dto/post.dto";
 import Footer from "@/components/Footer";
+import { ClipLoader } from "react-spinners";
 
 interface Props {
 	items: PostItemProps[];
 }
 
+const Thoughts: NextPage<Props> = () => {
+	const {
+		data: itemsData,
+		isLoading,
+		error,
+	} = useQuery("posts", Api.posts.getAll);
 
-const Thoughts: NextPage<Props> = ({ items }) => {
+	if (isLoading) {
+		return (
+			<div className="w-full h-[100vh] flex items-center justify-center">
+				<ClipLoader color={"skyblue"} size={100} />
+			</div>
+		);
+	}
 
+	if (error) {
+		console.log(error);
+		return <div>Error occurred while fetching posts.</div>;
+	}
 
 	return (
 		<>
 			<MetaHead title="Thoughts" />
 			<div className="container py-5">
 				<Header />
-				<GetHello />
-				<Posts items={items} />
+				
+				<Posts items={itemsData || []} />
 				<Footer />
 			</div>
 		</>
 	);
 };
-export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 
-	try {
-		const items = await Api.posts.getAll();
-
-		return {
-			props: {
-				items,
-			},
-		};
-	} catch (err) {
-		console.log(err);
-		return {
-			props: { items: [] },
-		};
-	}
-};
 export default Thoughts;
